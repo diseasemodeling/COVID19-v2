@@ -490,7 +490,7 @@ def compare_scenarios(State, A_l):
             if not isnan(A_l.values[i,3*table]):
                 ts = time.time()
                 run +=1
-                print('doing run %d'%run)
+                print('Runing Scenario %d'%run)
                 
                 a_c = A_l.values[i,3 * table]
                 a_sd = A_l.values[i,3 * table + 1]
@@ -503,8 +503,8 @@ def compare_scenarios(State, A_l):
                 df.to_excel(writer, sheet_name = name)
 
                 tu = time.time() - ts
-                print('run %d finished time used : %f sec'%(run,tu) )
-                print('expected time left: %f min'%(tu * (N - run)/60))
+                print('Time spent on running Scenario %d: %f sec'%(run,tu) )
+                print('Expected time left: %f min'%(tu * (N - run)/60))
 
             else:
                 break
