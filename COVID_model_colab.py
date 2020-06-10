@@ -516,7 +516,7 @@ def compare_scenarios(State, A_l):
 # Function to return action list 
 def return_A_list(i):
         print('================================')
-        print('This is Scenario' + str(i + 1))
+        print('This is Scenario ' + str(i + 1))
 
         #### The daily scenario is being used so the text here should be modified, yet to modified.
         # a_sd_str, a_c_str, a_u_str 

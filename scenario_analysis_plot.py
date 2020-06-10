@@ -31,8 +31,8 @@ def plot_results(table):
         df.plot(x = 'Date', y = 'number of infected, undiagnosed',legend = False, fontsize = 10, ax = ax[1], c=color_set[i],linewidth=linewidth)
      
     
-    ax[0].set_title("Number of people with infection, diagnosed", fontsize = 13)
-    ax[1].set_title("Number of people with infection, undiagnosed", fontsize = 13)
+    ax[0].set_title("Number of people with diagnosed infection", fontsize = 13)
+    ax[1].set_title("Number of people with undiagnosed infection", fontsize = 13)
     ax[1].set_xlabel("Date", fontsize = 10)
    								
     plt.subplots_adjust(hspace = 0.2, wspace= 0.3, right = 0.8)
@@ -405,8 +405,8 @@ def plot_results_colab(table, start_d, decision_d, data):
     
     ax[0].yaxis.set_major_formatter(FuncFormatter(lambda x, p: format(int(x), ','))) 
     ax[1].yaxis.set_major_formatter(FuncFormatter(lambda x, p: format(int(x), ','))) 
-    ax[0].set_title("Number of people with infection, diagnosed on the day")
-    ax[1].set_title("Number of people with infection, undiagnosed on the day")
+    ax[0].set_title("Number of people with diagnosed infection")
+    ax[1].set_title("Number of people with undiagnosed infection")
     						
     plt.subplots_adjust(hspace = 0.2, wspace= 0.3, right = 0.8)
     ax.flatten()[-1].legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 0.9),fontsize = 10)
