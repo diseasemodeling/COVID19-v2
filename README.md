@@ -18,11 +18,10 @@ This version 2 allows comparative analyses of alternative decision scenarios, ev
  
    - [Model on GitHub](https://github.com/diseasemodeling/COVID19-v2) 
    
-   - [Methodology](Methodology.pdf) 
+   - [Methodology](Methodology-v2.pdf) 
    
-   - [Sample scenario 1](figure/Scenario1.pdf)- Maximum contact reduction (only essential services open) 
-   
-     [Sample scenario 2](figure/Scenario2.pdf)- Phasing out social distancing, while combining with increased testing
+   - [Sample run](figure/SampleRun.pdf)-Compares 2 scenarios: a) Maximum contact reduction (only essential services open);  
+     b) Phasing out social distancing, while combining with increased testing
    
 
 ## Authors
