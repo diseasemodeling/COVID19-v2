@@ -20,7 +20,7 @@ This version 2 allows comparative analyses of muliple alternative decision scena
    
    - [Methodology](Methodology-v2.pdf)
    
-   - Sample run [Sample user-entered decision](results/Sample-Decision.png)- [Corresponding results](results/SampleRun-results.pdf) Compares 2 scenarios: \
+   - Sample run [Sample user-entered decision](samples/Sample-Decision.png)- [Corresponding results](samples/SampleRun-results.pdf) Compares 2 scenarios: \
       a) Maximum contact reduction (only essential services open)\
       b) Phasing out social distancing, while combining with increased contact tracing and testing.
    
