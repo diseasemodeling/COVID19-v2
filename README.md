@@ -18,7 +18,7 @@ This version 2 allows comparative analyses of muliple alternative decision scena
  
    - [Model on GitHub](https://github.com/diseasemodeling/COVID19-v2) 
    
-   - [Methodology](Methodology-v2.pdf) 
+   - [Methodology](Methodology-v2.pdf)
    
    - [Sample run](results/SampleRun.pdf)- Compares 2 scenarios: \
       a) Maximum contact reduction (only essential services open)\
