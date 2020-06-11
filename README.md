@@ -3,7 +3,7 @@
 ## About
 An interactive simulation tool for evaluating upto daily changes in options for social distancing, contact tracing and testing, and universal testing - Application to the State of New York. 
 
-## COVID19-v2 (v2.0.0) 
+## Version 2 (v2.0.0) changes
 This version 2 allows comparative analyses of muliple alternative decision scenarios, evaluate upto daily changes in decisions, and flexibility in setting analyses time-period 
 [For v1.0.0 go here](https://diseasemodeling.github.io/COVID19/)
 
