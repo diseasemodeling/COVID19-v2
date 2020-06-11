@@ -441,7 +441,8 @@ def compare_scenarios_colab(State, A_l):
         N += len(A_l[i])
     run = 0
     for table in range(tables):
-        table_path = pathlib.Path('results/table%d.xlsx'%(table+1))
+        # table_path = pathlib.Path('results/table%d.xlsx'%(table+1))
+        table_path = pathlib.Path('results/table.xlsx')
         writer = pd.ExcelWriter(table_path, engine = 'xlsxwriter')
         # names = []
         policy_index = []
@@ -471,7 +472,8 @@ def compare_scenarios_colab(State, A_l):
 
         pd.DataFrame(policy_index).to_excel(writer, sheet_name = 'interventions')
         writer.save()
-        return tables, start_d, decision_d
+        # return table, start_d, decision_d
+        return table_path, start_d, decision_d
    
 
 # Function for scenario comparison analysis - Excel sheet
@@ -589,9 +591,11 @@ def mod_decisions_run():
         mod_cost()
 
         print("NOTE: plots and excel file are automatically saved in the folder\n")
-        tables, start_d, decision_d = compare_scenarios_colab(State, A_l = [Str_L]) # run simulation
-        for i in range(tables):
-            sp.plot_results_colab(i + 1, start_d, decision_d, gv.pre_results_df) # plot results
+        # tables, start_d, decision_d = compare_scenarios_colab(State, A_l = [Str_L]) # run simulation
+        # for i in range(tables):
+        #     sp.plot_results_colab(i + 1, start_d, decision_d, gv.pre_results_df) # plot results
+        table_path, start_d, decision_d = compare_scenarios_colab(State, A_l = [Str_L]) # run simulation
+        sp.plot_results_colab(table_path, start_d, decision_d, gv.pre_results_df) # plot results
 
     else:
         main_run(State)

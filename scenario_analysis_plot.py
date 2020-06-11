@@ -116,13 +116,14 @@ def plot_results(table):
     plt.close()
 
 
-def plot_results_colab(table, start_d, decision_d, data):
+def plot_results_colab(table_path, start_d, decision_d, data):
     # actual data
     actual_data = data.parse(sheet_name ='Actual epidemic data', index_col = 0)
     actual_unemp = data.parse(sheet_name ='Actual unemployment rate', index_col = 0)
     day = pd.Timestamp(decision_d)
 
-    table_path = pathlib.Path('results/table%s.xlsx'%table)
+    # table_path = pathlib.Path('results/%s'%table_name)
+    # # table_path = pathlib.Path('results/table%s.xlsx'%table)
     excel = pd.ExcelFile(table_path)
     Names = excel.parse(sheet_name = 'interventions')
     N = Names.shape[0]
@@ -181,7 +182,7 @@ def plot_results_colab(table, start_d, decision_d, data):
     
     # # add legend
     # ax.flatten()[-1].legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 0.7),fontsize = 10)
-    plt.savefig("table-%s-1.png"%(table), dpi = 200)
+    plt.savefig("1.png", dpi = 200)
     plt.close()
     
     ############### second graph #################
@@ -224,7 +225,7 @@ def plot_results_colab(table, start_d, decision_d, data):
     names.append('Actual data')
     plt.subplots_adjust(hspace = 0.2, wspace= 0.3, right = 0.8)
     ax[0].legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, -0.5),fontsize = 10)
-    plt.savefig("table-%s-2.png"%(table), dpi = 200)
+    plt.savefig("2.png", dpi = 200)
     plt.close()
     
     ######## third graph #########
@@ -251,7 +252,7 @@ def plot_results_colab(table, start_d, decision_d, data):
     # plt.subplots_adjust(hspace = 0.4, wspace= 0.3, right = 0.8)
     plt.subplots_adjust(hspace = 0.4, wspace= 0.3)
     # ax.flatten()[-1].legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 1.4),fontsize = 10)
-    plt.savefig("table-%s-3-1.png"%(table), dpi = 200)
+    plt.savefig("3-1.png", dpi = 200)
     plt.close()
 
     # second subplot: 
@@ -276,7 +277,7 @@ def plot_results_colab(table, start_d, decision_d, data):
     ax[1].yaxis.set_label_coords(-0.1, -0.07)		
     plt.subplots_adjust(hspace = 0.4, wspace= 0.3, right = 0.8)
     ax.flatten()[-1].legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 1.6),fontsize = 10)
-    plt.savefig("table-%s-3-2.png"%(table), dpi = 200)
+    plt.savefig("3-2.png", dpi = 200)
     plt.close()
 
 
@@ -330,7 +331,7 @@ def plot_results_colab(table, start_d, decision_d, data):
     plt.subplots_adjust(hspace = 0.4, wspace= 0.3, right = 0.8)
     ax.flatten()[-1].legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 1.5),fontsize = 10)
     fig.suptitle('Use entered decisions')
-    plt.savefig("table-%s-4.png"%(table), dpi = 100)
+    plt.savefig("User input decisions.png", dpi = 100)
     plt.close()
 
      ######### fifth graph #############
@@ -351,7 +352,7 @@ def plot_results_colab(table, start_d, decision_d, data):
     # plt.subplots_adjust(hspace = 0.2, wspace= 0.3, right = 0.8)
     plt.subplots_adjust(hspace = 0.2, wspace= 0.3)
     # ax.legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 0.4),fontsize = 10)
-    plt.savefig("table-%s-5-1.png"%(table), dpi = 200)
+    plt.savefig("5-1.png", dpi = 200)
     plt.close()
 
     # second subplot: cumulative deaths
@@ -370,7 +371,7 @@ def plot_results_colab(table, start_d, decision_d, data):
     						
     plt.subplots_adjust(hspace = 0.2, wspace= 0.3, right = 0.8)
     ax.legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 0.4),fontsize = 10)
-    plt.savefig("table-%s-5-2.png"%(table), dpi = 200)
+    plt.savefig("5-2.png", dpi = 200)
     plt.close()
 
     # third subplot: cumulative hospitalization
@@ -389,7 +390,7 @@ def plot_results_colab(table, start_d, decision_d, data):
     # plt.subplots_adjust(hspace = 0.2, wspace= 0.3, right = 0.8)
     plt.subplots_adjust(hspace = 0.2, wspace= 0.3)
     # ax.legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 0.4),fontsize = 10)
-    plt.savefig("table-%s-5-3.png"%(table), dpi = 200)
+    plt.savefig("5-3.png", dpi = 200)
     plt.close()
 
 
@@ -410,10 +411,10 @@ def plot_results_colab(table, start_d, decision_d, data):
     						
     plt.subplots_adjust(hspace = 0.2, wspace= 0.3, right = 0.8)
     ax.flatten()[-1].legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 0.9),fontsize = 10)
-    plt.savefig("table-%s-5-4.png"%(table), dpi = 200)
+    plt.savefig("5-4.png", dpi = 200)
     plt.close()
 
 
     #### 
 
-    merge_image_colab(table)
+    merge_image_colab()
