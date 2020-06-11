@@ -1,6 +1,6 @@
 # COVID-19 simulation- An Interactive Tool for Analyses of Phased Reopening Decisions
 
-# COVID19-SA (v2.0.0) - allows comparative analyses of alternaive decision scenarios, upto daily changes in decisions, and flexibility in analyses time-period 
+## COVID19-v2 (v2.0.0) - This version 2 allows comparative analyses of alternaive decision scenarios, upto daily changes in decisions, and flexibility in analyses time-period 
 
 ## About
 An interactive simulation tool for evaluating upto daily changes in options for social distancing, contact tracing and testing, and universal testing - Application to the State of New York. 
