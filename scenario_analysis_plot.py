@@ -331,7 +331,7 @@ def plot_results_colab(table_path, start_d, decision_d, data):
     plt.subplots_adjust(hspace = 0.4, wspace= 0.3, right = 0.8)
     ax.flatten()[-1].legend(labels = names, loc = 'lower left', bbox_to_anchor=(1, 1.5),fontsize = 10)
     fig.suptitle('Use entered decisions')
-    plt.savefig("User input decisions.png", dpi = 100)
+    plt.savefig("results/User input decisions.png", dpi = 100)
     plt.close()
 
      ######### fifth graph #############
