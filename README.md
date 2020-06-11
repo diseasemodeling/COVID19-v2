@@ -1,4 +1,4 @@
-# COVID-19-v2 simulation- An Interactive Tool for Analyses of Phased Reopening Decisions
+# COVID-19 simulation (v2)- An Interactive Tool for Analyses of Phased Reopening Decisions
 
 ## About
 An interactive simulation tool for evaluating upto daily changes in options for social distancing, contact tracing and testing, and universal testing - Application to the State of New York. 
