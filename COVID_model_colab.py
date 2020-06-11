@@ -522,16 +522,6 @@ def return_A_list(i):
         # a_sd_str, a_c_str, a_u_str 
         # '1,0.2,10,0.4' means day 1 to day 1 use 0.2; day 2 to day 10 use 0.4 
         print('')
-        """print("Enter decision choice for social distancing as 'percent reduction in contacts compared to a normal pre-COVID situation' "\
-              "for week 1 through 52 as Start week1," \
-              'end week1, decision1, Start week2, end week2, decision2,…….')
-
-        print('Example 1: if you want week 1 to have 50'+'%'+' reduction, '\
-            'and weeks 2 to 52 to have 30' +'%'+' reduction, enter 1,1,0.5,2,52,0.3')
-
-        print('Example 2: if you want weeks 1 to 5 to have 50'+'%'+' reduction, '\
-            'weeks 6 to 10 to have 30'+'%'+' reduction,, and weeks 11 to 52 as 0'+'%'+' reduction,, '\
-            'enter 1,5,0.5,6,10,0.3,11,52,0')"""
         
         print("Enter decision choice for social distancing as 'percent reduction in contacts compared to a normal pre-COVID situation' "\
               "for day 1 through day N (N>=1) as End day 1, decision 1, End day 2, decision 2,…….")
@@ -542,31 +532,16 @@ def return_A_list(i):
 
         a_sd_str = input('Enter value here: ')
         print('\n')
-        """print("Enter decision choice for 'contact tracing and testing capcity per day' "\
-            "for weeks 1 through 52 as Start week1, end week1, decision1, Start week2, end week2, decision2 ….")
-
-        print('Example 1: If you can do 100 tests per day for weeks 1 to 10, and 1000 tests per day for weeks 11 to 52, '\
-            'enter 1,10,100,11,52,1000')
-
-        print('Example 2: If you can do 100 tests per day for week 1, 200 tests per day for week 2, '\
-            'and 1000 tests per day for weeks 3 to 52, enter 1,1,100,2,2,200,3,52,1000')"""
         
         print("Enter decision choice for 'contact tracing and testing capcity per day' "\
-              "for day 1 through through day N (N>=1) as End day 1, decision 1, End day 2, decision 2,…….")
+              "for day 1 through day N (N>=1) as End day 1, decision 1, End day 2, decision 2,…….")
         print('Example: if you can do 100 tests per day from day 1 to day 50, '\
               '200 tests per day for day 51 to day 100, enter 50,100,100,200')
         a_c_str = input('Enter value here: ')
         print('\n')
-        """print("Enter decision choice for 'testing capacity per day for universal testing of population' "\
-            'for weeks 1 through 52 as Start week1, end week1, decision1, Start week2, end week2, decision2……')
-
-        print('Example 1: If you can do 100 tests per day for weeks 1 to 10, and 1000 tests per day for weeks 11 to 52, '\
-            'enter 1,10,100,11,52,1000')
-
-        print('Example 2: If you can do 100 tests per day for week 1, 200 tests per day for week 2, '\
-            'and 1000 tests per day for weeks 3 to 52, enter 1,1,100,2,2,200,3,52,1000')"""
+        
         print("Enter decision choice for 'testing capacity per day for universal testing of population' "\
-              "for day 1 through through day N (N>=1) as End day 1, decision 1, End day 2, decision 2,…….")
+              "for day 1 through day N (N>=1) as End day 1, decision 1, End day 2, decision 2,…….")
         print('Example: if you can do 100 tests per day from day 1 to day 50, '\
               '200 tests per day for day 51 to day 100, enter 50,100,100,200')
         a_u_str = input('Enter value here: ')
@@ -580,8 +555,8 @@ def mod_cost():
     print('Do you want to modify costs related to decision choices?') 
     print('If you choose N (No), it will assume unit cost of symptom-based testing, '\
           'unit cost of contact tracing testing and unit cost of universal testing '\
-          'would the same as '  + str(gv.test_cost[0]) + ' and median daily wage is '\
-          + str(gv.md_salary) + '.')
+          'would the same as '  + str(gv.test_cost[0]) + '$ and median daily wage is '\
+          + str(gv.md_salary) + '$.')
     bol_c = 'N'  # default value
     bol_c =input('Enter Y or N: ')
     if bol_c == 'Y' or bol_c == 'y':
@@ -605,6 +580,7 @@ def mod_decisions_run():
     if bol_ == 'Y' or bol_ =='y':
         print('')
         print('Do you want to compare different decision choices? For example, input 1 for 1 scenario')
+        print('You can enter any number of scenarios but keeping it to a small number is recommended for reasonable comparisons')
         N_scenario = input('Enter value here: ')
         Str_L = []
         for i in range(int(N_scenario)):
