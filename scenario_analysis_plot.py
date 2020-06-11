@@ -195,7 +195,7 @@ def plot_results_colab(table_path, start_d, decision_d, data):
         names.append(name)
         df = excel.parse(sheet_name = name)
         # first subplot: assumpation of unemployment rate and actual unemployment rate
-        df.loc[df['Date'] >= day].plot(x = 'Date', y = 'Assumption under selected social distancing',\
+        df.loc[df['Date'] >= day].plot(x = 'Date', y = 'Unemployment rate assumption under selected social distancing',\
                                         ax = ax[0], fontsize = 10, legend = False,  c=color_set[i])
 
         # second subplot: wage loss over time

@@ -60,7 +60,7 @@ class output_var:
         # Sheet 2 
         df2 = pd.DataFrame({'Date': self.date_range,
                            'Wage loss': self.SAL_plot,
-                           'Assumption under selected social distancing':self.unemployment})
+                           'Unemployment rate assumption under selected social distancing':self.unemployment})
         df2.to_excel(writer, sheet_name = 'Unemployment')
         
         # Sheet 3 

@@ -56,7 +56,7 @@ class output_var:
 
         df2 = pd.DataFrame({'Date': self.date_range,
                            'Wage loss': self.SAL_plot,
-                           'Assumption under selected social distancing':self.unemployment})
+                           'Unemployment rate assumption under selected social distancing':self.unemployment})
         
         df3 = pd.DataFrame({'Date': self.date_range,
                            'cost of universal testing': self.univ_test_cost,
@@ -185,7 +185,7 @@ class output_var:
         day = pd.Timestamp(self.decision_d)
         
         # first subplot: assumpation of unemployment rate and actual unemployment rate
-        df2.loc[df2['Date'] >= day].plot(x = 'Date', y = 'Assumption under selected social distancing',
+        df2.loc[df2['Date'] >= day].plot(x = 'Date', y = 'Unemployment rate assumption under selected social distancing',
                 ax = ax[0], fontsize = 10, marker= '.', linestyle = '--')
 
         actual_unemp.plot(x = 'Date', y = 'Actual unemployment rate', ax = ax[0], fontsize = 10,marker= '.',\
@@ -204,7 +204,7 @@ class output_var:
         
         # add annotation
         is_date = df2.loc[df2['Date']== pd.to_datetime(self.decision_d)]
-        y1 = is_date['Assumption under selected social distancing']
+        y1 = is_date['Unemployment rate assumption under selected social distancing']
         ax[0].annotate(text,(self.decision_d,y1),xytext= (-40, -30), \
                         textcoords='offset points',size = size,\
                         bbox = bbox, arrowprops = arrowprops)
@@ -402,7 +402,7 @@ class output_var:
                 df1['Value of statistical life-year (VSL) loss'],\
                 df1['Number of new deaths'],\
                 df2['Wage loss'], 
-                df2['Assumption under selected social distancing'],\
+                df2['Unemployment rate assumption under selected social distancing'],\
                 df3['cost of universal testing'],\
                 df3['cost of contact tracing'],\
                 df3['cost of symptom-based testing'],\
@@ -420,7 +420,7 @@ class output_var:
                 df5['simulated cumulative deaths']]
      
         headers = ['Date', 'Value of statistical life-year (VSL) loss',\
-                   'Number of new deaths', 'Wage loss', 'Assumption under selected social distancing',
+                   'Number of new deaths', 'Wage loss', 'Unemployment rate assumption under selected social distancing',
                    'cost of universal testing', 'cost of contact tracing', 'cost of symptom-based testing',\
                    'total cost of testing','number of new diagnosis through contact tracing',\
                    'number of new diagnosis through symptom-based testing', 'number of new diagnosis through universal testing',\
@@ -488,14 +488,14 @@ class output_var:
         # create dataframe for unemloyment rate and wage loss
         df = pd.DataFrame({'Date': self.date_range,
                            'Wage loss': self.SAL_plot,
-                           'Assumption under selected social distancing':self.unemployment})
+                           'Unemployment rate assumption under selected social distancing':self.unemployment})
       
         # plot subplot
         fig, ax = plt.subplots(2, 1, sharex = True)
         day = pd.Timestamp(self.decision_d)
         
         # first subplot: assumpation of unemployment rate and actual unemployment rate
-        df.loc[df['Date'] >= day].plot(x = 'Date', y = 'Assumption under selected social distancing',
+        df.loc[df['Date'] >= day].plot(x = 'Date', y = 'Unemployment rate assumption under selected social distancing',
                 ax = ax[0], fontsize = 10, marker= '.', linestyle = '--')
 
         actual_unemp.plot(x = 'Date', y = 'Actual unemployment rate', ax = ax[0], fontsize = 10,marker= '.',\
@@ -516,7 +516,7 @@ class output_var:
         offset = 72
         
         is_date = df.loc[df['Date']== pd.to_datetime(self.decision_d)]
-        y1 = is_date['Assumption under selected social distancing']
+        y1 = is_date['Unemployment rate assumption under selected social distancing']
         ax[0].annotate('Start of decision making',(self.decision_d,y1),xytext=(-0.3 * offset, -0.5*offset), \
                         textcoords='offset points',bbox=bbox, arrowprops=arrowprops)
 
@@ -738,13 +738,13 @@ class output_var:
         # create dataframe for unemloyment rate and wage loss
         df = pd.DataFrame({'Date': self.date_range,
                            'Wage loss': self.SAL_plot,
-                           'Assumption under selected social distancing':self.unemployment})
+                           'Unemployment rate assumption under selected social distancing':self.unemployment})
       
         # plot subplot
         fig, ax = plt.subplots(2, 1, sharex = True)
         
         # first subplot: assumpation of unemployment rate and actual unemployment rate
-        df.plot(x = 'Date', y = 'Assumption under selected social distancing',
+        df.plot(x = 'Date', y = 'Unemployment rate assumption under selected social distancing',
                 ax = ax[0], fontsize = 10, marker= '.', linestyle = '--')
 
         actual_unemp.plot(x = 'Date', y = 'Actual unemployment rate', ax = ax[0], fontsize = 10,marker= '.',\

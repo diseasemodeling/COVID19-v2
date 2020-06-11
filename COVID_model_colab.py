@@ -10,6 +10,7 @@ import global_var as gv
 import outputs as op
 import read_policy as rp
 import scenario_analysis_plot as sp
+import write_read_me as rm
 
 class CovidModel():
     def __init__(self):
@@ -442,7 +443,7 @@ def compare_scenarios_colab(State, A_l):
     run = 0
     for table in range(tables):
         # table_path = pathlib.Path('results/table%d.xlsx'%(table+1))
-        table_path = pathlib.Path('results/table.xlsx')
+        table_path = pathlib.Path('results/results.xlsx')
         writer = pd.ExcelWriter(table_path, engine = 'xlsxwriter')
         # names = []
         policy_index = []
@@ -471,9 +472,12 @@ def compare_scenarios_colab(State, A_l):
             print('expected time left: %f min'%(tu*(N - run)/60))
 
         pd.DataFrame(policy_index).to_excel(writer, sheet_name = 'interventions')
+        
+        readme = rm.write_rm()
+        readme.to_excel(writer, sheet_name = 'README')
         writer.save()
-        # return table, start_d, decision_d
-        return table_path, start_d, decision_d
+    # return table, start_d, decision_d
+    return table_path, start_d, decision_d
    
 
 # Function for scenario comparison analysis - Excel sheet
@@ -512,6 +516,7 @@ def compare_scenarios(State, A_l):
                 break
         pd.DataFrame(names).to_excel(writer, sheet_name = 'interventions')
         writer.save()
+    
     return tables
 
 
@@ -571,16 +576,16 @@ def mod_cost():
 
 # Function to modify decisions 
 def mod_decisions_run():
-    print('Do you want to test a decision (Y or N)?')
-    print('If you choose N (No), it will assume social distancing measures '\
-          'as of today are maintained for one year since today,'\
-          'and testing is only through baseline symptom-based testing, '\
-          'i.e., no contact tracing and testing, and no universal testing')
-    bol_ = 'N' # default not change decisions
-    bol_ = input('Enter Y or N: ')
+    # print('Do you want to test a decision (Y or N)?')
+    # print('If you choose N (No), it will assume social distancing measures '\
+    #       'as of today are maintained for one year since today,'\
+    #       'and testing is only through baseline symptom-based testing, '\
+    #       'i.e., no contact tracing and testing, and no universal testing')
+    bol_ = 'Y' # default not change decisions
+    # bol_ = input('Enter Y or N: ')
     print('\n')
     if bol_ == 'Y' or bol_ =='y':
-        print('')
+        
         print('Do you want to compare different decision choices? For example, input 1 for 1 scenario')
         print('You can enter any number of scenarios but keeping it to a small number is recommended for reasonable comparisons')
         N_scenario = input('Enter value here: ')
@@ -604,6 +609,8 @@ if  __name__ == "__main__":
 
     State = 'NY' # default is New York
     print('This is a model for State of New York')
+    print('It was calibrated to June 4th and will simulate until today under the assumption of ' + str(int(100)) +'%' +' of contact reduction i.e. opening only essential services')
+    print('We will ask you to enter decision choices for the simulation starting from today.')
     # insert two letter abbreviation state that you want to model
     # State = input('insert two letter abbreviation for the State that you want to model (e.g.: NY for New York): ')  
     set_up_COVID_sim(State)   # initialize model 
