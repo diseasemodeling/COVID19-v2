@@ -3,7 +3,9 @@
 ## About
 An interactive simulation tool for evaluating upto daily changes in options for social distancing, contact tracing and testing, and universal testing - Application to the State of New York. 
 
-## COVID19-v2 (v2.0.0) - This version 2 allows comparative analyses of alternative decision scenarios, evaluating upto daily changes in decisions, and flexibility in setting analyses time-period 
+## COVID19-v2 (v2.0.0) 
+This version 2 allows comparative analyses of alternative decision scenarios, evaluating upto daily changes in decisions, and flexibility in setting analyses time-period 
+[For v1.0.0 go here](https://diseasemodeling.github.io/COVID19/)
 
 ## To use the simulation tool for evaluating decisions 
 1. Click on run model link to open in Google Colab - you will have to log in to your google account for the code to work. The simulation model is built in Python, if you run it in Colab, no software installation is needed.
