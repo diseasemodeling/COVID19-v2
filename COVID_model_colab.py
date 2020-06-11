@@ -528,7 +528,7 @@ def return_A_list(i):
         
         print('Example: if you want day 1 to day 50 have 50'+'%'+' reduction, '\
               'day 51 to day 100 to have 30' +'%'+' reduction, enter 50,0.5,100,0.3')
-        print('NOTE: The maximum contact reduction is ' + str(int(100)) +'%')
+        print('NOTE: Contact reduction of ' + str(int(100)) +'%' +' corresponds to opening only essential services, see Methodology for details.')
 
         a_sd_str = input('Enter value here: ')
         print('\n')
@@ -555,8 +555,8 @@ def mod_cost():
     print('Do you want to modify costs related to decision choices?') 
     print('If you choose N (No), it will assume unit cost of symptom-based testing, '\
           'unit cost of contact tracing testing and unit cost of universal testing '\
-          'would the same as '  + str(gv.test_cost[0]) + '$ and median daily wage is '\
-          + str(gv.md_salary) + '$.')
+          'would the same as $'  + str(gv.test_cost[0]) + ' and median daily wage is $'\
+          + str(gv.md_salary) + '.')
     bol_c = 'N'  # default value
     bol_c =input('Enter Y or N: ')
     if bol_c == 'Y' or bol_c == 'y':
