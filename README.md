@@ -10,7 +10,7 @@ This version 2 allows comparative analyses of alternative decision scenarios, ev
 ## To use the simulation tool for evaluating decisions 
 1. Click on run model link to open in Google Colab - you will have to log in to your google account for the code to work. The simulation model is built in Python, if you run it in Colab, no software installation is needed.
 
-      [Run model (link)](https://colab.research.google.com/drive/1c-abLtgDlDz4YNLw9WU1f0DvQil1RQEd?authuser=1#scrollTo=kZsCnldC-obW) 
+      [Run model (link)](https://colab.research.google.com/drive/1c-abLtgDlDz4YNLw9WU1f0DvQil1RQEd?authuser=1#) 
       
 2. In Google Colab, click on 'Runtime-->Run all'. Follow instructions given by the model to enter decisons you would like to evaluate 
    
