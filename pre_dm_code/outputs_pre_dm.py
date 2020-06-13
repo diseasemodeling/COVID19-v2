@@ -10,8 +10,6 @@ class output_var:
 
     def __init__(self, sizeofrun, state):
         self.time_step = np.zeros(sizeofrun)
-        self.action_plot = np.zeros(sizeofrun)
-        self.a_sd_plot = np.zeros(sizeofrun)
         self.num_inf_plot = np.zeros(sizeofrun)              
         self.num_hosp_plot = np.zeros(sizeofrun)  
         self.num_dead_plot = np.zeros(sizeofrun)
@@ -20,6 +18,7 @@ class output_var:
         self.cumulative_inf = np.zeros(sizeofrun)
         self.cumulative_hosp = np.zeros(sizeofrun)
         self.cumulative_dead = np.zeros(sizeofrun)
+        self.cumulative_new_inf_plot = np.zeros(sizeofrun)   
         self.unemployment = np.zeros(sizeofrun)
         self.univ_test_cost = np.zeros(sizeofrun)
         self.trac_test_cost = np.zeros(sizeofrun)
@@ -30,6 +29,7 @@ class output_var:
         self.policy_plot = np.zeros((sizeofrun, 3))
         self.num_diag_inf = np.zeros(sizeofrun)
         self.num_undiag_inf = np.zeros(sizeofrun)
+        self.num_new_inf_plot = np.zeros(sizeofrun)
         
         # new plots for scenario analysis:
         self.T_c_plot = np.zeros(sizeofrun)
@@ -90,7 +90,9 @@ class output_var:
                            'simulated cumulative hospitalized': self.cumulative_hosp,
                            'simulated cumulative deaths': self.cumulative_dead,
                            'number of infected, diagnosed': self.num_diag_inf,
-                           'number of infected, undiagnosed': self.num_undiag_inf})
+                           'number of infected, undiagnosed': self.num_undiag_inf,
+                           'number of new infection': self.num_new_inf_plot,
+                           'cumulative new infection': self.cumulative_new_inf_plot})
         df5.to_excel(writer, sheet_name = 'Summary')
         
         # Sheet 6 and Sheet 7

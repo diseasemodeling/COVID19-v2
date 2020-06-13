@@ -106,12 +106,14 @@ class CovidModel():
             indx_l = self.t - self.inv_dt + 1 # = self.t
             indx_u = self.t + 1  # = self.t + 1
 
-            self.op_ob.num_inf_plot[self.d] = np.sum(self.num_diag[indx_l: indx_u])          # new infected for the day
+            self.op_ob.num_inf_plot[self.d] = np.sum(self.num_diag[indx_l: indx_u])          # new diagnosis for the day
             self.op_ob.num_hosp_plot[self.d] = np.sum(self.num_hosp[indx_l: indx_u])         # new hospitablization for the day
             self.op_ob.num_dead_plot[self.d] = np.sum(self.num_dead[indx_l: indx_u])         # new death for the day
+            self.op_ob.num_new_inf_plot[self.d] = np.sum(self.num_new_inf[indx_l: indx_u])   # new infection for the day
             self.op_ob.cumulative_inf[self.d] =  self.tot_num_diag[self.t]                   # cumulative infections from start of simulation to the day
             self.op_ob.cumulative_hosp[self.d] = self.tot_num_hosp[self.t]                   # cumulative hospitalizations from start of simulation to the day
             self.op_ob.cumulative_dead[self.d] = self.tot_num_dead[self.t]                   # cumulative dead from start of simulation to the day
+            self.op_ob.cumulative_new_inf_plot[self.d] = self.tot_num_new_inf[self.t]        # cumulative new infection from start of simulation to the day
             
             self.op_ob.num_base[self.d] = np.sum(self.num_base_test[indx_l: indx_u])         # number of symptom based testing for the day
             self.op_ob.num_uni[self.d] = np.sum(self.num_uni_test[indx_l: indx_u])           # number of universal testing for the day
@@ -277,7 +279,9 @@ class CovidModel():
                 self.num_uni_test[self.t][risk][age] = (pop_dis_b[0,1] + pop_dis_b[0,2] + pop_dis_b[0,3]) * self.dt * self.a_u
                 # number of diagnosis through contact tracing
                 self.num_trac_test[self.t][risk][age] = (pop_dis_b[0,1] + pop_dis_b[0,2] + pop_dis_b[0,3]) * self.dt * (1 - self.a_u) * self.a_c
-                
+                # number of new infection (S -> L)
+                self.num_new_inf[self.t][risk][age] = pop_dis_b[0,0] * self.rate_array[0] * self.dt
+        
         # the total number of diagnosis
         self.num_diag[self.t] = self.num_base_test[self.t] + self.num_trac_test[self.t] + self.num_uni_test[self.t]
 
@@ -285,7 +289,7 @@ class CovidModel():
         self.tot_num_diag[self.t] = self.tot_num_diag[self.t - 1] + np.sum(self.num_diag[self.t])
         self.tot_num_hosp[self.t] = self.tot_num_hosp[self.t - 1] + np.sum(self.num_hosp[self.t])
         self.tot_num_dead[self.t] = self.tot_num_dead[self.t - 1] +np.sum(self.num_dead[self.t])
-            
+        self.tot_num_new_inf[self.t] = self.tot_num_dead[self.t - 1] + np.sum(self.num_new_inf[self.t])       
         self.num_diag_inf[self.t] = np.sum(self.pop_dist_sim[self.t,:,:,4:7])
         self.num_undiag_inf[self.t] = np.sum(self.pop_dist_sim[self.t,:,:,1:4])
 
@@ -343,10 +347,11 @@ class CovidModel():
         self.t = 0  
         self.rate_array = np.zeros([16 ,1])     # initialize rate array
         
-        # Initialize measures for epidemics
+        ## Initialize measures for epidemics
         self.num_diag = np.zeros((self.T_total + 1, self.tot_risk, self.tot_age))        # number of diagnosis
         self.num_dead = np.zeros((self.T_total + 1, self.tot_risk, self.tot_age))        # number of deaths
         self.num_hosp = np.zeros((self.T_total + 1, self.tot_risk, self.tot_age))        # number of hospitalizations
+        self.num_new_inf = np.zeros((self.T_total + 1, self.tot_risk, self.tot_age))     # number of newly infection   
         
         self.pop_dist_sim = np.zeros((self.T_total + 1, self.tot_risk, \
                                       self.tot_age, self.num_state))                     # population distribution by risk, age and epidemic state
@@ -358,7 +363,7 @@ class CovidModel():
         self.tot_num_diag = np.zeros(self.T_total + 1)                                   # cumulative diagnosed
         self.tot_num_dead = np.zeros(self.T_total + 1)                                   # cumulative deaths
         self.tot_num_hosp = np.zeros(self.T_total + 1)                                   # cumulative hospitalizations
-        
+        self.tot_num_new_inf = np.zeros(self.T_total + 1)                                # cumulative new infections (S-> L)
         self.num_diag_inf = np.zeros(self.T_total + 1)                                   # Q_L + Q_E + Q_I
         self.num_undiag_inf = np.zeros(self.T_total + 1)                                 # L + E + I
 
@@ -390,9 +395,11 @@ class CovidModel():
         self.num_diag[0] = self.num_diag[self.t]
         self.num_hosp[0] = self.num_hosp[self.t]
         self.num_dead[0] = self.num_dead[self.t]
+        self.num_new_inf[0] = self.num_new_inf[self.t]
         self.tot_num_diag[0] = self.tot_num_diag[self.t]
         self.tot_num_dead[0] = self.tot_num_dead[self.t]
         self.tot_num_hosp[0] = self.tot_num_hosp[self.t]
+        self.tot_num_new_inf[0] = self.tot_num_new_inf[self.t]
         self.num_base_test[0] = self.num_base_test[self.t]
         self.num_uni_test[0] = self.num_uni_test[self.t]
         self.num_trac_test[0] = self.num_trac_test[self.t]
@@ -418,14 +425,16 @@ def run_COVID_sim(decision = None):
             'self.num_diag': sample_model.num_diag[sample_model.t].tolist(),
             'self.num_hosp': sample_model.num_hosp[sample_model.t].tolist(),
             'self.num_dead': sample_model.num_dead[sample_model.t].tolist(),
+            'self.num_new_inf': sample_model.num_new_inf[sample_model.t].tolist(),
             'self.num_base_test': sample_model.num_base_test[sample_model.t].tolist(),
             'self.num_uni_test': sample_model.num_uni_test[sample_model.t].tolist(),
             'self.num_trac_test': sample_model.num_trac_test[sample_model.t].tolist(),
             'self.tot_num_diag': sample_model.tot_num_diag[sample_model.t],
             'self.tot_num_dead': sample_model.tot_num_dead[sample_model.t],
             'self.tot_num_hosp': sample_model.tot_num_hosp[sample_model.t],
+            'self.tot_num_new_inf': sample_model.tot_num_new_inf[sample_model.t],
             'self.rate_unemploy': sample_model.rate_unemploy[sample_model.t],
-            'self.next_start_day': gv.begin_decision_date.strftime("%m/%d/%Y")}        
+            'self.next_start_day': gv.begin_decision_date.strftime("%m/%d/%Y")}         
     
     
     sample_model.op_ob.plot_cum_output(gv.actual_data)  # plot to see calibration comparison with acutal data (can be commented)
