@@ -177,7 +177,7 @@ class CovidModel():
         self.Final_VSL[self.t]  = np.sum(np.dot(num_dead , self.VSL)) 
        
         # calculate cost of testing 
-        self.cost_test_b[self.t] =  self.dt *self.cost_tst[0] * np.sum(self.num_base_test[self.t]) /million
+        self.cost_test_b[self.t] =  self.cost_tst[0] * np.sum(self.num_base_test[self.t]) /million
         self.cost_test_c[self.t] =  self.dt * self.cost_tst[1] * self.a_c * (1 - self.a_u) * np.sum(self.pop_dist_sim[(self.t - 1),:,:,1:4]) /(self.second_attack_rate * million)
         self.cost_test_u[self.t] =  self.dt * self.cost_tst[2] * self.T_u / million
         self.Final_TST[self.t] = self.cost_test_u[self.t] + self.cost_test_c[self.t] + self.cost_test_b[self.t] 
