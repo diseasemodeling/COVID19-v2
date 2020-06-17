@@ -536,7 +536,7 @@ def return_A_list(i):
         print('Example 1: To set day 1 to day 30 to continue with maximum possible shutdown keeping only essential services open, i.e., 100'+'%'+' reduction, '\
               'set day 31 to day 60 to relax the shutdown to maintain 60' +'%'+' reduction in contacts, and'\
              'set day 61 to day 150 to further relax the shutdown to maintain 30' +'%'+' reduction in contacts,enter 30,1,60,0.6,150,0.3')
-         print('Example 2: if you want to set day 1 to day 30 to relax the shutdown and maintain 80'+'%'+' reduction in contacts, '\
+        print('Example 2: if you want to set day 1 to day 30 to relax the shutdown and maintain 80'+'%'+' reduction in contacts, '\
               'set day 31 to day 100 to further relax the shutdown to maintain 40' +'%'+' reduction in contacts, enter 30,0.8,100,0.4')
         print('NOTE: Contact reduction of ' + str(int(100)) +'%' +' corresponds to maximum possible reduction, i.e., opening only essential services, see Methodology for details.')
 
