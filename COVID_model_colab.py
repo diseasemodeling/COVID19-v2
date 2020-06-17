@@ -589,8 +589,8 @@ def mod_decisions_run():
     print('\n')
     if bol_ == 'Y' or bol_ =='y':
         
-        print('Do you want to compare different decision choices? For example, input 1 for 1 scenario')
-        print('You can enter any number of scenarios but keeping it to a small number is recommended for reasonable comparisons')
+        print('How many decision scenarios do you want to simulate and compare? For example, input 2 for 2 scenarios')
+        print('You can enter any number of scenarios but keeping it to a small number is recommended for visualization (results are also written to excel file for download)')
         N_scenario = input('Enter value here: ')
         Str_L = []
         for i in range(int(N_scenario)):
