@@ -533,9 +533,12 @@ def return_A_list(i):
         print("Enter decision choice for social distancing as 'percent reduction in contacts compared to a normal pre-COVID situation' "\
               "for day 1 through day N (N>=1) as End day 1, decision 1, End day 2, decision 2,…….")
         
-        print('Example: if you want day 1 to day 50 have 50'+'%'+' reduction, '\
-              'day 51 to day 100 to have 30' +'%'+' reduction, enter 50,0.5,100,0.3')
-        print('NOTE: Contact reduction of ' + str(int(100)) +'%' +' corresponds to opening only essential services, see Methodology for details.')
+        print('Example 1: To set day 1 to day 30 to continue with maximum possible shutdown keeping only essential services open, i.e., 100'+'%'+' reduction, '\
+              'set day 31 to day 60 to relax the shutdown to maintain 60' +'%'+' reduction in contacts, and'\
+             'set day 61 to day 150 to further relax the shutdown to maintain 30' +'%'+' reduction in contacts,enter 30,1,60,0.6,150,0.3)
+         print('Example 2: if you want to set day 1 to day 30 to relax the shutdown and maintain 80'+'%'+' reduction in contacts, '\
+              'set day 31 to day 100 to further relax the shutdown to maintain 40' +'%'+' reduction in contacts, enter 30,0.8,100,0.4')
+        print('NOTE: Contact reduction of ' + str(int(100)) +'%' +' corresponds to maximum possible reduction, i.e., opening only essential services, see Methodology for details.')
 
         a_sd_str = input('Enter value here: ')
         print('\n')
@@ -609,7 +612,7 @@ if  __name__ == "__main__":
 
     State = 'NY' # default is New York
     print('This is a model for State of New York')
-    print('It was calibrated to June 4th and will simulate until today under the assumption of ' + str(int(100)) +'%' +' of contact reduction i.e. opening only essential services')
+    print('It was calibrated upto June 4th. June 4th to today will assume maximum contact reduction i.e. only essential services were open')
     print('We will ask you to enter decision choices for the simulation starting from today.')
     # insert two letter abbreviation state that you want to model
     # State = input('insert two letter abbreviation for the State that you want to model (e.g.: NY for New York): ')  
