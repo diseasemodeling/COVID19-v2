@@ -1,10 +1,12 @@
 # COVID-19 simulation (v2)- An Interactive Tool for Analyses of Phased Reopening Decisions
 
-## About
-An interactive simulation tool for evaluating upto daily changes in options for social distancing, contact tracing and testing, and universal testing - Application to the State of New York. 
+## About - Version 2 (v2.0.0)
+Key features
+1. An interactive user-friendly simulation tool 
+2. Evaluate upto daily changes in options for social distancing, contact tracing and testing, and universal testing - Application to the State of New York. 
+3. Allows comparative analyses of muliple alternative decision scenarios
+4. Flexibility in setting analyses time-period, and option to change unit costs
 
-## Version 2 (v2.0.0) changes
-This version 2 allows comparative analyses of muliple alternative decision scenarios, evaluate upto daily changes in decisions, flexibility in setting analyses time-period, and option to change unit costs
 [For v1.0.0 go here](https://diseasemodeling.github.io/COVID19/)
 
 ## To use the simulation tool for evaluating decisions 
