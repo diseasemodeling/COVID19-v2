@@ -1,14 +1,11 @@
 # COVID-19 simulation (v2)- An Interactive Tool for Analyses of Phased Reopening Decisions
 
 ## About - Version 2  [Run model (link)](https://colab.research.google.com/drive/1c-abLtgDlDz4YNLw9WU1f0DvQil1RQEd?authuser=1#) 
-Key features
-  - An interactive user-friendly simulation tool
-  - Evaluate impact of combinations of social distancing, contact tracing and testing, and universal testing - for New York. 
-  - Conduct comparative analyses of muliple alternative decision scenarios
+- An interactive user-friendly simulation tool
+- Evaluate impact of combinations of social distancing, contact tracing and testing, and universal testing - for New York. 
+- Conduct comparative analyses of muliple alternative decision scenarios
 
-[For v1.0.0 go here](https://diseasemodeling.github.io/COVID19/)
-
-## Instructions - To run simulation for evaluating decisions 
+## Instructions - run simulation and evaluate decisions 
 1. Click on run model link to open in Google Colab - you will have to log in to your google account for the code to work. The simulation model is built in Python, if you run it in Colab, no software installation is needed.
 
      [Run model (link)](https://colab.research.google.com/drive/1c-abLtgDlDz4YNLw9WU1f0DvQil1RQEd?authuser=1#) 
