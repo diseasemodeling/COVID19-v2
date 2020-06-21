@@ -27,5 +27,5 @@ For questions, comments, or interests in collaborations please contact the corre
 Corresponding author contact: Dr. Chaitra Gopalappa; email: chaitrag@umass.edu \ [Disease Modeling Lab, University of Massachusetts Amherst](https://blogs.umass.edu/chaitrag/chaitra-gopalappa/) \
 
 
-
+[Version 1](https://diseasemodeling.github.io/COVID19/) [Version 2](https://diseasemodeling.github.io/COVID19-v2/)
 
