@@ -1,11 +1,10 @@
 # COVID-19 simulation (v2)- An Interactive Tool for Analyses of Phased Reopening Decisions
 
 ## About - Version 2  [Run model (link)](https://colab.research.google.com/drive/1c-abLtgDlDz4YNLw9WU1f0DvQil1RQEd?authuser=1#) 
-Key features 
+Key features
 1. An interactive user-friendly simulation tool 
-2. Evaluate upto daily changes in options for social distancing, contact tracing and testing, and universal testing - Application to the State of New York. 
-3. Allows comparative analyses of muliple alternative decision scenarios
-4. Flexibility in setting analyses time-period, and option to change unit costs
+2. Evaluate impact of combinations of social distancing, contact tracing and testing, and universal testing - for State of New York. 
+3. Conduct comparative analyses of muliple alternative decision scenarios
 
 [For v1.0.0 go here](https://diseasemodeling.github.io/COVID19/)
 
@@ -20,7 +19,7 @@ Key features
  
    - [Model on GitHub](https://github.com/diseasemodeling/COVID19-v2) 
    - [Methodology](Methodology-v2.pdf) 
-   - Sample run [Sample user-entered decision](samples/Sample-Decision.png)- [Corresponding results](samples/SampleRun-results.pdf) Compares 2 scenarios: 
+   - Sample run [Sample user-entered decision](samples/Sample-Decision.png)- [Corresponding results](samples/SampleRun-results.pdf)  Compares 2 scenarios: \
       a) Maximum contact reduction (only essential services open) \
       b) Phasing out social distancing, while combining with increased contact tracing and testing.
    
