@@ -2,9 +2,9 @@
 
 ## About - Version 2  [Run model (link)](https://colab.research.google.com/drive/1c-abLtgDlDz4YNLw9WU1f0DvQil1RQEd?authuser=1#) 
 Key features
-1. An interactive user-friendly simulation tool 
-2. Evaluate impact of combinations of social distancing, contact tracing and testing, and universal testing - for State of New York. 
-3. Conduct comparative analyses of muliple alternative decision scenarios
+  - An interactive user-friendly simulation tool
+  - Evaluate impact of combinations of social distancing, contact tracing and testing, and universal testing - for New York. 
+  - Conduct comparative analyses of muliple alternative decision scenarios
 
 [For v1.0.0 go here](https://diseasemodeling.github.io/COVID19/)
 
