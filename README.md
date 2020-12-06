@@ -25,7 +25,7 @@
 The tool is open access and can be used for your own analyses, citing instructions [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3902751.svg)](https://doi.org/10.5281/zenodo.3902751) \
 For questions, comments, or interests in collaborations please contact the corresponding author. \
 Corresponding author contact: Dr. Chaitra Gopalappa; email: chaitrag@umass.edu \ [Disease Modeling Lab, University of Massachusetts Amherst](https://blogs.umass.edu/chaitrag/chaitra-gopalappa/) \
-
+Acknowledgments: NSF #1915481
 
 [Version 1](https://diseasemodeling.github.io/COVID19/) \ [Version 2](https://diseasemodeling.github.io/COVID19-v2/)
 
