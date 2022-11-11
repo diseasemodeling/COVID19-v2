@@ -21,7 +21,7 @@
       b) Phasing out social distancing, while combining with increased contact tracing and testing.
    
 
-### Open access
+### Terms of use
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
