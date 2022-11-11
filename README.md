@@ -22,7 +22,21 @@
    
 
 ### Open access
-The tool is open access and can be used for your own analyses, citing instructions [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3902751.svg)](https://doi.org/10.5281/zenodo.3902751) \
+Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+
+Citing instructions Xinmeng Zhao, Hanisha Tatapudi, Sonza Singh, Shifali Bansal, Seyedeh Nazanin Khatami, & Chaitra Gopalappa. (2020). COVID-19 simulation (v2)- An Interactive Tool for Analyses of Phased Reopening Decisions (v2.0). Zenodo. https://doi.org/10.5281/zenodo.3902751
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3902751.svg)](https://doi.org/10.5281/zenodo.3902751) \
+
+CONTACT
 For questions, comments, or interests in collaborations please contact the corresponding author. \
 Corresponding author contact: Dr. Chaitra Gopalappa; email: chaitrag@umass.edu \ [Disease Modeling Lab, University of Massachusetts Amherst](https://blogs.umass.edu/chaitrag/chaitra-gopalappa/) \
 Acknowledgments: NSF #1915481
